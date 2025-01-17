@@ -1,20 +1,122 @@
-.container{
-    max-width: 100%;
-    width: 1000px;
+/* Asosiy uslub */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
     display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+}
+
+.todo-container {
+    width: 50%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#task-input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-task {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-task:hover {
+    background-color: #0056b3;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#task-list li {
+    padding: 10px;
+    margin: 10px 0;
+    background: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.btn1{
-    padding: 10px 12px;
-    border: 4px rgb(84, 5, 5) solid;
-    border-radius: 20px;
-    color: rgb(84, 5, 5);
-    background-color: transparent;
-    font-size: xx-large;
+#task-list li.completed {
+    text-decoration: line-through;
+    color: gray;
 }
 
-.btn1:hover{
-box-shadow: 0 0 0 1px;
+#task-list li span.time {
+    font-size: 0.9em;
+    color: gray;
+    margin-left: 10px;
 }
+
+#task-list li button {
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#task-list li button:hover {
+    background-color: #c0392b;
+}
+
+/* Responsiv dizayn */
+@media (max-width: 768px) {
+    .todo-container {
+        width: 90%;
+    }
+
+    #task-input {
+        width: 60%;
+    }
+
+    #add-task {
+        width: 30%;
+    }
+
+    #task-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #task-list li button {
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+}
+
